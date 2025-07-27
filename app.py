@@ -3,6 +3,8 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
 from PIL import Image
+import warnings
+warnings.filterwarnings("ignore")
 
 # Load the trained model
 model = load_model("models/brain_tumor_classifier_model.h5")
@@ -27,7 +29,7 @@ if uploaded_file is not None:
     col1, col2 = st.columns(2)
 
     with col1:
-        st.image(uploaded_file, caption="🖼️ Uploaded Image", use_column_width=True)
+        st.image(uploaded_file, caption="🖼️ Uploaded Image", use_container_width=True)
 
     with col2:
         # Load and preprocess image
